@@ -1,7 +1,8 @@
 import { ThemeProvider,createTheme } from '@mui/material'
 import { defaultTheme } from './assets/defaultTheme'
 import './App.css'
-import Example from './components/Example'
+import { Outlet } from 'react-router-dom'
+import Page from './components/Page'
 
 function App() {
 
@@ -10,7 +11,9 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme} >
-        <Example />
+        <Page>
+          <Outlet/>
+        </Page>
       </ThemeProvider>
     </>
   )
